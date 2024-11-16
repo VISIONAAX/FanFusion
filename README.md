@@ -4,6 +4,6 @@
 - **BettingPool Contract:** https://evm-testnet.flowscan.io/address/0xE4c277c1aFFc8C1Eaa2c5CaFAf9720d527BDB674
 
 **Chiliz Spicy Testnet Deployed Contracts:**
-- **Contract Owner:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
-- **FanFusion-Token(FVT) Token Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
-- **BettingPool Contract:** https://testnet.chiliscan.com/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
+- **Contract Owner:** https://testnet.chiliscan.com/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6 https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
+- **FanFusion-Token(FVT) Token Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B 
+- **BettingPool Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
