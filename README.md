@@ -12,6 +12,11 @@
 - **FanFusion-Token(FVT) Token Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B 
 - **BettingPool Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
 
+**Scroll L1sload Testnet Deployed Contracts:**
+- **Contract Owner:** https://l1sload-blockscout.scroll.io/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
+- **FanFusion-Token(FVT) Token Contract:** https://l1sload-blockscout.scroll.io/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
+- **BettingPool Contract:** https://l1sload-blockscout.scroll.io/address/0x19F82072e6612156eC5F8b43fa404c3e3Eef9957
+
 **Bitkub Testnet Deployed Contracts:**
 - **Contract Owner:** 
 - **FanFusion-Token(FVT) Token Contract:** 
