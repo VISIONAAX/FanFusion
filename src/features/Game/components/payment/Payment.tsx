@@ -76,7 +76,7 @@ const Payment = () => {
               <span className='text-xl'>
                 <InputSvg />
               </span>
-              <span className='font-bold'>Input</span>
+              <span className='font-bold'>Wallet Balance</span>
             </div>
           </Tab>
           <Tab>
@@ -84,7 +84,7 @@ const Payment = () => {
               <span className='text-3xl'>
                 <OutputSVG />
               </span>
-              <span className='font-bold'>Output</span>
+              <span className='font-bold'>Transaction History</span>
             </div>
           </Tab>
         </Tabs>

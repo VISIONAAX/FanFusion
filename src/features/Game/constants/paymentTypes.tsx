@@ -1,12 +1,12 @@
 export const paymentTypes = [
   {
-    name: 'USDc',
+    name: 'FanFusion Token',
     commission: '0',
-    imgSrc: '/images/usdc-logo.png',
+    imgSrc: '/images/flow-logo.png',
   },
   {
     name: 'Bank Card',
-    commission: '5%',
+    commission: '5',
     imgSrc: '/images/credit-card.png',
   },
   {

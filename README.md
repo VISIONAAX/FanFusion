@@ -17,6 +17,12 @@
 - **FanFusion-Token(FVT) Token Contract:** https://l1sload-blockscout.scroll.io/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
 - **BettingPool Contract:** https://l1sload-blockscout.scroll.io/address/0x19F82072e6612156eC5F8b43fa404c3e3Eef9957
 
+**Celo Alfajores Testnet Deployed Contracts:**
+- **Contract Owner:** https://celo-alfajores.blockscout.com/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
+- **FanFusion-Token(FVT) Token Contract:** https://celo-alfajores.blockscout.com/address/0xb8171c4E2002Deea048477D8B337ff27F9a36687
+- **BettingPool Contract:** https://celo-alfajores.blockscout.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
+
+
 **Mantle Testnet Deployed Contracts:**
 - **Contract Owner:** https://sepolia.mantlescan.xyz/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
 - **FanFusion-Token(FVT) Token Contract:** https://sepolia.mantlescan.xyz/address/0xb8171c4E2002Deea048477D8B337ff27F9a36687
@@ -40,5 +46,11 @@
 - **Contract Owner:** https://evm-testnet.flowscan.io/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6?tab=txs
 - **FanFusion-Token(FVT) Token Contract:** https://evm-testnet.flowscan.io/address/0x19F82072e6612156eC5F8b43fa404c3e3Eef9957?tab=txs
 - **BettingPool Contract:** https://evm-testnet.flowscan.io/address/0xE4c277c1aFFc8C1Eaa2c5CaFAf9720d527BDB674
+
+**Celo Alfajores Testnet Deployed Contracts:**
+- **Contract Owner:** https://celo-alfajores.blockscout.com/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
+- **FanFusion-Token(FVT) Token Contract:** https://celo-alfajores.blockscout.com/address/0xb8171c4E2002Deea048477D8B337ff27F9a36687
+- **BettingPool Contract:** https://celo-alfajores.blockscout.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
+
 
 ![Screenshot 2024-11-17 014952](https://github.com/user-attachments/assets/22125c43-cdf7-47c4-9ddc-796c300763a8)

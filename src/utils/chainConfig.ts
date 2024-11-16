@@ -9,6 +9,7 @@ export const ChainId = {
     BITKUB_TESTNET: 25925,
     SCROLL_DEVNET: 2227728,
     MANTLE_TESTNET: 5003,
+    CELO_TESTNET: 44787,
   };
     
   export const supportedChains = [
@@ -21,6 +22,7 @@ export const ChainId = {
     ChainId.BITKUB_TESTNET,
     ChainId.SCROLL_DEVNET,
     ChainId.MANTLE_TESTNET,
+    ChainId.CELO_TESTNET,
   ];
   
   export const getRPCProvider = (chainId: number) => {
@@ -45,6 +47,8 @@ export const ChainId = {
         return "https://rpc-testnet.bitkubchain.io/";
       case 5003:
         return "https://rpc.sepolia.mantle.xyz/";
+      case 44787:
+        return "https://alfajores-forno.celo-testnet.org/";
       default:
         return "https://eth-mainnet.g.alchemy.com/v2/YMRFBPG1iyBwiRQIHThSWZanZj0NXUjv";
     }
@@ -72,6 +76,8 @@ export const ChainId = {
         return "https://testnet.bkcscan.com/";
       case 5003:
           return "https://sepolia.mantlescan.xyz/";
+      case 44787:
+          return "https://celo-alfajores.blockscout.com/";
       default:
         return "https://mumbai.polygonscan.com";
     }

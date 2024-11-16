@@ -11,6 +11,7 @@ import {
   bitkubTestnet,
   scrollDevnet,
   mantleTestnet,
+  celoTestnet,
 } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
@@ -61,6 +62,30 @@ const ChilizTestnet= {
     decimals: 18,
     name: 'CHZ',
     symbol: 'CHZ',
+  },
+};
+const CeloTestnet= {
+  id: 44787,
+  testnet: true,
+  name: 'Celo Alfajores',
+  rpcUrls: {
+    default: {
+      http: ['https://alfajores-forno.celo-testnet.org/'],
+    },
+    public: {
+      http: ['https://alfajores-forno.celo-testnet.org/'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Celo Alfajores',
+      url: 'https://celo-alfajores.blockscout.com',
+    },
+  },
+  nativeCurrency: {
+    decimals: 18,
+    name: 'CELO',
+    symbol: 'CELO',
   },
 };
 const ScrollDevnet= {
@@ -161,7 +186,7 @@ const UbitMainnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, FlowTestnet, ChilizTestnet, ScrollDevnet, MantleTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
+  [polygon, arbitrum, FlowTestnet, ChilizTestnet, CeloTestnet, ScrollDevnet, MantleTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
   [
     jsonRpcProvider({
       rpc: (chainId) => {
@@ -207,6 +232,11 @@ const { chains, publicClient } = configureChains(
         } else if (chainId.id == 88882) {
           return {
             http: 'https://testnet.chiliscan.com/',
+            webSocket: '',
+          };
+        } else if (chainId.id == 44787) {
+          return {
+            http: 'https://alfajores-forno.celo-testnet.org/',
             webSocket: '',
           };
         } else if (chainId.id == 2227728) {
