@@ -10,6 +10,7 @@ import {
   chilizTestnet,
   bitkubTestnet,
   scrollDevnet,
+  mantleTestnet,
 } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
@@ -86,6 +87,30 @@ const ScrollDevnet= {
     symbol: 'Sepolia ETH',
   },
 };
+const MantleTestnet= {
+  id: 5003,
+  testnet: true,
+  name: 'Mantle Sepolia Testnet',
+  rpcUrls: {
+    default: {
+      http: ['https://rpc.sepolia.mantle.xyz/'],
+    },
+    public: {
+      http: ['https://rpc.sepolia.mantle.xyz/'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Mantle Sepolia Testnet',
+      url: 'https://rpc.sepolia.mantle.xyz',
+    },
+  },
+  nativeCurrency: {
+    decimals: 18,
+    name: 'MNT',
+    symbol: 'MNT',
+  },
+};
 const BitkubTestnet= {
   id: 25925,
   testnet: true,
@@ -136,7 +161,7 @@ const UbitMainnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, FlowTestnet, ChilizTestnet, ScrollDevnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
+  [polygon, arbitrum, FlowTestnet, ChilizTestnet, ScrollDevnet, MantleTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
   [
     jsonRpcProvider({
       rpc: (chainId) => {
@@ -197,6 +222,11 @@ const { chains, publicClient } = configureChains(
         } else if (chainId.id == 90002) {
           return {
             http: 'https://rpc.ubitscan.io/',
+            webSocket: '',
+          };
+        } else if (chainId.id == 5003) {
+          return {
+            http: 'https://rpc.sepolia.mantle.xyz/',
             webSocket: '',
           };
         }else if (chainId.id == 421614) {

@@ -8,6 +8,7 @@ export const ChainId = {
     CHILIZ_TESTNET: 88882,
     BITKUB_TESTNET: 25925,
     SCROLL_DEVNET: 2227728,
+    MANTLE_TESTNET: 5003,
   };
     
   export const supportedChains = [
@@ -19,6 +20,7 @@ export const ChainId = {
     ChainId.CHILIZ_TESTNET,
     ChainId.BITKUB_TESTNET,
     ChainId.SCROLL_DEVNET,
+    ChainId.MANTLE_TESTNET,
   ];
   
   export const getRPCProvider = (chainId: number) => {
@@ -41,6 +43,8 @@ export const ChainId = {
           return "https://l1sload-blockscout.scroll.io/";
       case 25925:
         return "https://rpc-testnet.bitkubchain.io/";
+      case 5003:
+        return "https://rpc.sepolia.mantle.xyz/";
       default:
         return "https://eth-mainnet.g.alchemy.com/v2/YMRFBPG1iyBwiRQIHThSWZanZj0NXUjv";
     }
@@ -66,8 +70,9 @@ export const ChainId = {
         return "https://l1sload-blockscout.scroll.io/";
       case 25925:
         return "https://testnet.bkcscan.com/";
+      case 5003:
+          return "https://sepolia.mantlescan.xyz/";
       default:
         return "https://mumbai.polygonscan.com";
     }
   };
-  
