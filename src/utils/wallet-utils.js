@@ -8,7 +8,8 @@ import {
   arbitrumSepolia,
   evmFlow,
   chilizTestnet,
-  bitkubTestnet
+  bitkubTestnet,
+  scrollDevnet,
 } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
@@ -61,6 +62,30 @@ const ChilizTestnet= {
     symbol: 'CHZ',
   },
 };
+const ScrollDevnet= {
+  id: 2227728,
+  testnet: true,
+  name: 'Scroll devnet',
+  rpcUrls: {
+    default: {
+      http: ['https://l1sload-rpc.scroll.io/'],
+    },
+    public: {
+      http: ['https://l1sload-rpc.scroll.io/'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Scroll devnet',
+      url: 'https://l1sload-blockscout.scroll.io',
+    },
+  },
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Sepolia ETH',
+    symbol: 'Sepolia ETH',
+  },
+};
 const BitkubTestnet= {
   id: 25925,
   testnet: true,
@@ -111,7 +136,7 @@ const UbitMainnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, FlowTestnet, ChilizTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
+  [polygon, arbitrum, FlowTestnet, ChilizTestnet, ScrollDevnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
   [
     jsonRpcProvider({
       rpc: (chainId) => {
@@ -157,6 +182,11 @@ const { chains, publicClient } = configureChains(
         } else if (chainId.id == 88882) {
           return {
             http: 'https://testnet.chiliscan.com/',
+            webSocket: '',
+          };
+        } else if (chainId.id == 2227728) {
+          return {
+            http: 'https://l1sload-rpc.scroll.io/',
             webSocket: '',
           };
         } else if (chainId.id == 25925) {

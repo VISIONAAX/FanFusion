@@ -7,6 +7,7 @@ export const ChainId = {
     FLOW_TESTNET: 545,
     CHILIZ_TESTNET: 88882,
     BITKUB_TESTNET: 25925,
+    SCROLL_DEVNET: 2227728,
   };
     
   export const supportedChains = [
@@ -17,6 +18,7 @@ export const ChainId = {
     ChainId.FLOW_TESTNET,
     ChainId.CHILIZ_TESTNET,
     ChainId.BITKUB_TESTNET,
+    ChainId.SCROLL_DEVNET,
   ];
   
   export const getRPCProvider = (chainId: number) => {
@@ -35,6 +37,8 @@ export const ChainId = {
         return "https://testnet.evm.nodes.onflow.org/";
       case 88882:
         return "https://spicy-rpc.chiliz.com/";
+      case 2227728:
+          return "https://l1sload-blockscout.scroll.io/";
       case 25925:
         return "https://rpc-testnet.bitkubchain.io/";
       default:
@@ -58,6 +62,8 @@ export const ChainId = {
         return "https://evm-testnet.flowscan.io/";
       case 88882:
         return "https://testnet.chiliscan.com/";
+      case 2227728:
+        return "https://l1sload-blockscout.scroll.io/";
       case 25925:
         return "https://testnet.bkcscan.com/";
       default:
