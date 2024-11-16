@@ -27,3 +27,11 @@
 ![Screenshot 2024-11-17 012439](https://github.com/user-attachments/assets/d9c141a8-68f9-492f-b190-25defa035ba4)
 
 ![photo_6181330384697015892_y](https://github.com/user-attachments/assets/fcd33060-5a83-40fc-bc22-2c1889409ae0)
+
+**Blockscout Pointing links to Blockscout / Replacing Existing Links: (ONLY REPLACING FOR AVAILABLE EXPLORERS ON BLOCKSCOUT)**
+**Flow Testnet EVM Deployed Contracts:**
+- **Contract Owner:** https://evm-testnet.flowscan.io/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6?tab=txs
+- **FanFusion-Token(FVT) Token Contract:** https://evm-testnet.flowscan.io/address/0x19F82072e6612156eC5F8b43fa404c3e3Eef9957?tab=txs
+- **BettingPool Contract:** https://evm-testnet.flowscan.io/address/0xE4c277c1aFFc8C1Eaa2c5CaFAf9720d527BDB674
+
+![Screenshot 2024-11-17 014952](https://github.com/user-attachments/assets/22125c43-cdf7-47c4-9ddc-796c300763a8)
