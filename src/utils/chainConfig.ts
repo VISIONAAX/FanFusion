@@ -6,10 +6,9 @@ export const ChainId = {
     ARBITRUM_ONE_MAINNET: 42161,
     FLOW_TESTNET: 545,
     CHILIZ_TESTNET: 88882,
+    BITKUB_TESTNET: 25925,
   };
-  
-  export let activeChainId = ChainId.ARBITRUM_ONE_MAINNET;
-  
+    
   export const supportedChains = [
     ChainId.GOERLI,
     ChainId.POLYGON_MAINNET,
@@ -17,6 +16,7 @@ export const ChainId = {
     ChainId.ARBITRUM_ONE_MAINNET,
     ChainId.FLOW_TESTNET,
     ChainId.CHILIZ_TESTNET,
+    ChainId.BITKUB_TESTNET,
   ];
   
   export const getRPCProvider = (chainId: number) => {
@@ -34,7 +34,9 @@ export const ChainId = {
       case 545:
         return "https://testnet.evm.nodes.onflow.org/";
       case 88882:
-        return "https:/spicy-rpc.chiliz.com/";
+        return "https://spicy-rpc.chiliz.com/";
+      case 25925:
+        return "https://rpc-testnet.bitkubchain.io/";
       default:
         return "https://eth-mainnet.g.alchemy.com/v2/YMRFBPG1iyBwiRQIHThSWZanZj0NXUjv";
     }
@@ -54,6 +56,10 @@ export const ChainId = {
         return "https://arbiscan.io";
       case 545:
         return "https://evm-testnet.flowscan.io/";
+      case 88882:
+        return "https://testnet.chiliscan.com/";
+      case 25925:
+        return "https://testnet.bkcscan.com/";
       default:
         return "https://mumbai.polygonscan.com";
     }

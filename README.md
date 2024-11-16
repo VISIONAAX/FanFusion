@@ -7,3 +7,8 @@
 - **Contract Owner:** https://testnet.chiliscan.com/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
 - **FanFusion-Token(FVT) Token Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B 
 - **BettingPool Contract:** https://testnet.chiliscan.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
+
+**Bitkub Testnet Deployed Contracts:**
+- **Contract Owner:** 
+- **FanFusion-Token(FVT) Token Contract:** 
+- **BettingPool Contract:** 

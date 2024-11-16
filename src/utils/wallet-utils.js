@@ -7,7 +7,8 @@ import {
   opBNBTestnet,
   arbitrumSepolia,
   evmFlow,
-  chilizTestnet
+  chilizTestnet,
+  bitkubTestnet
 } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
@@ -26,7 +27,7 @@ const FlowTestnet= {
   },
   blockExplorers: {
     default: {
-      name: 'EVM on Flow (testnet)',
+      name: 'EVM on Flow Testnet',
       url: 'https://evm-testnet.flowscan.io',
     },
   },
@@ -60,6 +61,30 @@ const ChilizTestnet= {
     symbol: 'CHZ',
   },
 };
+const BitkubTestnet= {
+  id: 25925,
+  testnet: true,
+  name: 'Bitkub Chain Testnet',
+  rpcUrls: {
+    default: {
+      http: ['https://rpc-testnet.bitkubchain.io/'],
+    },
+    public: {
+      http: ['https://rpc-testnet.bitkubchain.io/'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Bitkub Chain Testnet',
+      url: 'https://testnet.bkcscan.com/',
+    },
+  },
+  nativeCurrency: {
+    decimals: 18,
+    name: 'KUB',
+    symbol: 'KUB',
+  },
+};
 const UbitMainnet = {
   id: 90002,
   testnet: true,
@@ -86,7 +111,7 @@ const UbitMainnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, FlowTestnet, ChilizTestnet, UbitMainnet, arbitrumSepolia],
+  [polygon, arbitrum, FlowTestnet, ChilizTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
   [
     jsonRpcProvider({
       rpc: (chainId) => {
@@ -132,6 +157,11 @@ const { chains, publicClient } = configureChains(
         } else if (chainId.id == 88882) {
           return {
             http: 'https://testnet.chiliscan.com/',
+            webSocket: '',
+          };
+        } else if (chainId.id == 25925) {
+          return {
+            http: 'https://testnet.bkcscan.com/',
             webSocket: '',
           };
         } else if (chainId.id == 90002) {
