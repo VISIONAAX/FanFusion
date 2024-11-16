@@ -12,6 +12,7 @@ import {
   scrollDevnet,
   mantleTestnet,
   celoTestnet,
+  morphTestnet,
 } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
@@ -136,6 +137,30 @@ const MantleTestnet= {
     symbol: 'MNT',
   },
 };
+const MorphTestnet= {
+  id: 2810,
+  testnet: true,
+  name: 'Morph Holesky Testnet',
+  rpcUrls: {
+    default: {
+      http: ['https://rpc-quicknode-holesky.morphl2.io/'],
+    },
+    public: {
+      http: ['https://rpc-quicknode-holesky.morphl2.io/'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Morph Holesky Testnet',
+      url: 'https://explorer-holesky.morphl2.io',
+    },
+  },
+  nativeCurrency: {
+    decimals: 18,
+    name: 'ETH',
+    symbol: 'ETH',
+  },
+};
 const BitkubTestnet= {
   id: 25925,
   testnet: true,
@@ -186,7 +211,7 @@ const UbitMainnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, FlowTestnet, ChilizTestnet, CeloTestnet, ScrollDevnet, MantleTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
+  [polygon, arbitrum, FlowTestnet, ChilizTestnet, CeloTestnet, ScrollDevnet, MantleTestnet, MorphTestnet, BitkubTestnet, UbitMainnet, arbitrumSepolia],
   [
     jsonRpcProvider({
       rpc: (chainId) => {
@@ -259,7 +284,12 @@ const { chains, publicClient } = configureChains(
             http: 'https://rpc.sepolia.mantle.xyz/',
             webSocket: '',
           };
-        }else if (chainId.id == 421614) {
+        }else if (chainId.id == 2810) {
+          return {
+            http: 'https://rpc-quicknode-holesky.morphl2.io/',
+            webSocket: '',
+          };
+        } else if (chainId.id == 421614) {
           return {
             http: 'https://sepolia-rollup.arbitrum.io/rpc',
             webSocket: '',
