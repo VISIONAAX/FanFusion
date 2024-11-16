@@ -4,7 +4,8 @@ export const ChainId = {
     POLYGON_MUMBAI: 80001,
     POLYGON_MAINNET: 137,
     ARBITRUM_ONE_MAINNET: 42161,
-    FLOW_MAINNET: 545,
+    FLOW_TESTNET: 545,
+    CHILIZ_TESTNET: 88882,
   };
   
   export let activeChainId = ChainId.ARBITRUM_ONE_MAINNET;
@@ -14,7 +15,8 @@ export const ChainId = {
     ChainId.POLYGON_MAINNET,
     ChainId.POLYGON_MUMBAI,
     ChainId.ARBITRUM_ONE_MAINNET,
-    ChainId.FLOW_MAINNET,
+    ChainId.FLOW_TESTNET,
+    ChainId.CHILIZ_TESTNET,
   ];
   
   export const getRPCProvider = (chainId: number) => {
@@ -31,6 +33,8 @@ export const ChainId = {
         return "https://arb1.arbitrum.io/rpc";
       case 545:
         return "https://testnet.evm.nodes.onflow.org/";
+      case 88882:
+        return "https:/spicy-rpc.chiliz.com/";
       default:
         return "https://eth-mainnet.g.alchemy.com/v2/YMRFBPG1iyBwiRQIHThSWZanZj0NXUjv";
     }

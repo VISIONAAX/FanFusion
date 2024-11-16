@@ -6,7 +6,8 @@ import {
   mantaSepoliaTestnet,
   opBNBTestnet,
   arbitrumSepolia,
-  evmFlow
+  evmFlow,
+  chilizTestnet
 } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
@@ -35,6 +36,30 @@ const FlowTestnet= {
     symbol: 'FLOW',
   },
 };
+const ChilizTestnet= {
+  id: 88882,
+  testnet: true,
+  name: 'Chiliz Spicy Testnet',
+  rpcUrls: {
+    default: {
+      http: ['https://spicy-rpc.chiliz.com/'],
+    },
+    public: {
+      http: ['https://spicy-rpc.chiliz.com/'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Chiliz Spicy Testnet',
+      url: 'https://testnet.chiliscan.com',
+    },
+  },
+  nativeCurrency: {
+    decimals: 18,
+    name: 'CHZ',
+    symbol: 'CHZ',
+  },
+};
 const UbitMainnet = {
   id: 90002,
   testnet: true,
@@ -61,7 +86,7 @@ const UbitMainnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, FlowTestnet, UbitMainnet, arbitrumSepolia],
+  [polygon, arbitrum, FlowTestnet, ChilizTestnet, UbitMainnet, arbitrumSepolia],
   [
     jsonRpcProvider({
       rpc: (chainId) => {
@@ -102,6 +127,11 @@ const { chains, publicClient } = configureChains(
         } else if (chainId.id == 545) {
           return {
             http: 'https://testnet.evm.nodes.onflow.org/',
+            webSocket: '',
+          };
+        } else if (chainId.id == 88882) {
+          return {
+            http: 'https://testnet.chiliscan.com/',
             webSocket: '',
           };
         } else if (chainId.id == 90002) {

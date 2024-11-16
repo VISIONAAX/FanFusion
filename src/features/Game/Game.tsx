@@ -3,7 +3,7 @@ import { Tab } from '@headlessui/react';
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useAccount, usePublicClient, useNetwork } from 'wagmi';
+import { useAccount } from 'wagmi';
 import Carousel from '@/components/carousel/Carousel';
 import Menu from '@/components/menu/Menu';
 import Profile from '@/components/profiles/Profile';
@@ -20,11 +20,11 @@ import { categories } from '@/features/Game/constants/categories';
 import { NFTs } from '@/features/Game/constants/NFTs';
 import { players } from '@/features/Game/constants/players';
 import { questions } from '@/features/Game/constants/questions';
-import { trendingQuizzes } from '@/features/Game/constants/quizzes';
+import { trendingQuizzes, tierQuizzes } from '@/features/Game/constants/quizzes';
 import { useQuizContext } from '@/features/Game/contexts/QuizContext';
 import { useTabsContext } from '@/features/Game/contexts/TabsContext';
-
-import { tierQuizzes } from './constants/quizzes';
+import StoryBar from '@/components/story/StoryBar';
+import { storyData } from '@/constants/mocks/storiesMock';
 import TextField from '../../components/inputs/TextField';
 import WorldIdKit from '@/components/buttons/WorldIdKit';
 
@@ -36,9 +36,8 @@ const Game = () => {
     setQuestions,
     setActiveQuiz,
     activeQuiz,
-    depositFunds,
   } = useQuizContext();
-  const [showInviteFriends, setShowInviteFriends] = useState(false);
+  const [showInviteFriends, setShowInviteFriends] = useState(false); // Track invite modal
   const { selectedTab } = useTabsContext();
 
   const handleTrendingQuizClick = (quizIdentifier: string) => {
@@ -84,124 +83,100 @@ const Game = () => {
   const home = () => {
     return (
       <>
-        <section className='mb-3 max-w-[95vw] space-y-9 mobile-demo:w-[450px]'>
-          {Capacitor.isNativePlatform() ? (
-            <div
-              className='sticky top-0 z-[999] flex bg-dark pb-4'
-              style={{
-                paddingTop: 'calc(2px + env(safe-area-inset-top))',
-              }}
-            >
-              <div className='mx-auto w-[85vw] mobile-demo:w-[450px]'>
-                <TextField
-                  startAdornment='search'
-                  placeHolder='Search by player or team'
-                />
-              </div>
-            </div>
-          ) : (
-            <div className='flex gap-4'>
+        <section className="mb-3 max-w-[95vw] space-y-9 mobile-demo:w-[450px]">
+          <div
+            className={
+              Capacitor.isNativePlatform()
+                ? 'sticky top-0 z-[999] flex bg-dark pb-4'
+                : 'flex gap-4'
+            }
+          >
+            <div className="mx-auto w-[85vw] mobile-demo:w-[450px]">
               <TextField
-                startAdornment='search'
-                placeHolder='Search by player or team'
+                startAdornment="search"
+                placeHolder="Search by player or team"
               />
             </div>
-          )}
-          {Capacitor.getPlatform() === 'ios' ? (
-            <Tab.List className='!mt-5 flex flex-col items-center gap-4 mobile-m:flex-row'>
-              {categories.map((category, index) => {
-                return (
-                  <Tab
-                    key={index}
-                    className='flex w-full justify-center rounded-full border-2 border-primary-500 p-2 hover:bg-green-600 active:bg-green-500'
-                  >
-                    {category.image}
-                  </Tab>
-                );
-              })}
-            </Tab.List>
-          ) : (
-            <Tab.List className='flex flex-col items-center gap-4 mobile-m:flex-row'>
-              {categories.map((category, index) => {
-                return (
-                  <Tab
-                    key={index}
-                    className='flex w-full justify-center rounded-full border-2 border-primary-500 p-2 hover:bg-green-600 active:bg-green-500'
-                  >
-                    {category.image}
-                  </Tab>
-                );
-              })}
-            </Tab.List>
-          )}
+          </div>
+
+          {/* StoryBar below the search bar */}
+          <StoryBar stories={storyData} />
+
+          {/* Tab List */}
+          <Tab.List className="!mt-5 flex flex-col items-center gap-4 mobile-m:flex-row">
+            {categories.map((category, index) => (
+              <Tab
+                key={index}
+                className="flex w-full justify-center rounded-full border-2 border-primary-500 p-2 hover:bg-green-600 active:bg-green-500"
+              >
+                {category.image}
+              </Tab>
+            ))}
+          </Tab.List>
+
           <ConnectButton />
-          <WorldIdKit/>
-          <TabPanel className='space-y-9'>
+          <WorldIdKit />
+
+          {/* Trending and Tier Quizzes */}
+          <TabPanel className="space-y-9">
             <div>
               <h2>Trending Quiz Bets</h2>
               <Carousel
                 indicators={false}
-                className='left-2/4 w-screen -translate-x-2/4 items-center justify-center child:gap-2 mobile-demo:w-[500px]'
+                className="left-2/4 w-screen -translate-x-2/4 items-center justify-center child:gap-2 mobile-demo:w-[500px]"
               >
-                {Object.keys(trendingQuizzes).map((quizIdentifier, index) => {
-                  return (
-                    <QuizCard
-                      key={index}
-                      players={trendingQuizzes[quizIdentifier].players}
-                      // entryPrice={trendingQuizzes[quizIdentifier].entryPrice}
-                      title={trendingQuizzes[quizIdentifier].title}
-                      image={trendingQuizzes[quizIdentifier].image}
-                      onClick={() => handleTrendingQuizClick(quizIdentifier)}
-                    />
-                  );
-                })}
+                {Object.keys(trendingQuizzes).map((quizIdentifier, index) => (
+                  <QuizCard
+                    key={index}
+                    players={trendingQuizzes[quizIdentifier].players}
+                    title={trendingQuizzes[quizIdentifier].title}
+                    image={trendingQuizzes[quizIdentifier].image}
+                    onClick={() => handleTrendingQuizClick(quizIdentifier)}
+                  />
+                ))}
               </Carousel>
             </div>
             <div>
               <h2>By Tier Quiz Bets</h2>
               <Carousel
                 indicators={false}
-                className='left-2/4 w-screen -translate-x-2/4 items-center justify-center child:gap-2 mobile-demo:w-[500px]'
+                className="left-2/4 w-screen -translate-x-2/4 items-center justify-center child:gap-2 mobile-demo:w-[500px]"
               >
-                {Object.keys(tierQuizzes).map((quizIdentifier, index) => {
-                  return (
-                    <QuizCard
-                      key={index}
-                      players={tierQuizzes[quizIdentifier].players}
-                      // entryPrice={tierQuizzes[quizIdentifier].entryPrice}
-                      title={tierQuizzes[quizIdentifier].title}
-                      type={tierQuizzes[quizIdentifier].type}
-                      image={tierQuizzes[quizIdentifier].image}
-                      onClick={() => handleTierQuizClick(quizIdentifier)}
-                    />
-                  );
-                })}
+                {Object.keys(tierQuizzes).map((quizIdentifier, index) => (
+                  <QuizCard
+                    key={index}
+                    players={tierQuizzes[quizIdentifier].players}
+                    title={tierQuizzes[quizIdentifier].title}
+                    type={tierQuizzes[quizIdentifier].type}
+                    image={tierQuizzes[quizIdentifier].image}
+                    onClick={() => handleTierQuizClick(quizIdentifier)}
+                  />
+                ))}
               </Carousel>
             </div>
 
+            {/* Invite Friends Section */}
             <div>
-              <div className='flex items-center justify-between gap-3'>
-                <h2>Friends</h2>
-                <span
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="text-lg font-bold text-primary-500">
+                  Invite Friends
+                </h2>
+                <button
                   onClick={() => setShowInviteFriends(true)}
-                  className='text-gradient-primary text-sm font-bold'
+                  className="text-gradient-primary text-sm font-bold"
                 >
                   + Invite Friends
-                </span>
+                </button>
               </div>
-              <PlayersInfiniteScroll players={players} className='mt-6' />
+              <PlayersInfiniteScroll players={players} className="mt-6" />
             </div>
           </TabPanel>
-          <TabPanel className='mt-6 flex justify-center'>
-            <span className='h2'>Coming Soon</span>
-          </TabPanel>
-          <TabPanel className='mt-6 flex justify-center'>
-            <span className='h2'>Coming Soon</span>
-          </TabPanel>
-          <TabPanel className='justly-center mt-6 flex'>
-            <span className='h2'>Coming Soon</span>
-          </TabPanel>
         </section>
+
+        {/* Modal for Invite Friends */}
+        {showInviteFriends && (
+          <InviteFriends setOpen={setShowInviteFriends} />
+        )}
 
         {createPortal(<Menu />, document.body)}
       </>
@@ -209,26 +184,14 @@ const Game = () => {
   };
 
   const renderGame = () => {
-    if (activeQuiz) {
-      return <Quiz />;
-    }
-    if (showInviteFriends) {
+    if (activeQuiz) return <Quiz />;
+    if (showInviteFriends)
       return <InviteFriends setOpen={setShowInviteFriends} />;
-    }
-    if (selectedTab === 'home') {
-      return home();
-    }
-    if (selectedTab === 'leader-board') {
-      return <LeaderBoard />;
-    }
-    if (selectedTab === 'payment') {
-      return <Payment />;
-    }
-    if (selectedTab === 'profile') {
-      return <Profile />;
-    }
-
-    return <></>;
+    if (selectedTab === 'home') return home();
+    if (selectedTab === 'leader-board') return <LeaderBoard />;
+    if (selectedTab === 'payment') return <Payment />;
+    if (selectedTab === 'profile') return <Profile />;
+    return null;
   };
 
   return <TabGroup>{renderGame()}</TabGroup>;

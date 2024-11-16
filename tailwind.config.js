@@ -24,7 +24,6 @@ module.exports = {
 
       colors: {
         primary: {
-          // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
           100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
           200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
@@ -40,6 +39,8 @@ module.exports = {
           500: 'rgb(var(--tw-color-secondary-500)) / <alpha-value>',
         },
         dark: '#1A181A',
+        light: '#F3F4F6', // Added light background for story backgrounds or light themes
+        highlight: '#FF3E00', // Accent color for active stories
       },
       keyframes: {
         flicker: {
@@ -65,16 +66,35 @@ module.exports = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-145px*5))' },
         },
+        'story-highlight': {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
         'auto-friends-slider': 'friends-slider 20s linear infinite',
+        'highlight-pulse': 'story-highlight 2s infinite',
+      },
+
+      spacing: {
+        'story-gap': '0.75rem', // Consistent gap between stories
       },
 
       backgroundImage: {
         'gradient-primary':
           'linear-gradient(111.1deg, rgb(var(--tw-color-primary-500))  7.7%, rgb(var(--tw-color-secondary-500)) 87.64%)',
+        'story-border': 'radial-gradient(circle, #FF3E00, #10B981)', // Gradient for story borders
+      },
+
+      borderRadius: {
+        'story-circle': '50%', // For circular story avatars
+      },
+
+      boxShadow: {
+        story: '0 4px 6px rgba(0, 0, 0, 0.1)', // Subtle shadow for story cards
       },
     },
   },
@@ -100,6 +120,14 @@ module.exports = {
         '.inset-y-center': {
           top: '50%',
           '@apply -translate-y-1/2': {},
+        },
+        '.story-avatar': {
+          width: '3rem',
+          height: '3rem',
+          '@apply rounded-story-circle shadow-story': {},
+        },
+        '.story-active': {
+          '@apply border-2 border-highlight animate-highlight-pulse': {},
         },
       });
     },
