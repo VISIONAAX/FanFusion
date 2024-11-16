@@ -21,3 +21,9 @@
 - **Contract Owner:** 
 - **FanFusion-Token(FVT) Token Contract:** 
 - **BettingPool Contract:** 
+
+**WorldCoin Production level ORB Integrated:**
+
+![Screenshot 2024-11-17 012439](https://github.com/user-attachments/assets/d9c141a8-68f9-492f-b190-25defa035ba4)
+
+![photo_6181330384697015892_y](https://github.com/user-attachments/assets/fcd33060-5a83-40fc-bc22-2c1889409ae0)
