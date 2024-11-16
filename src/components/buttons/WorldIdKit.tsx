@@ -29,7 +29,7 @@ const WorldIdKit = () => {
     <>
       <IDKitWidget
         app_id={process.env.NEXT_PUBLIC_WLD_CLIENT_ID} // obtained from the Developer Portal
-        action={process.env.NEXT_PUBLIC_WLD_CLIENT_SECRET} // obtained from the Developer Portal
+        action="verify-identity" // obtained from the Developer Portal
         onSuccess={onSuccess} // callback when the modal is closed
         handleVerify={handleVerify} // callback when the proof is received
         verification_level={VerificationLevel.Orb}
