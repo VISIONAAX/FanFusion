@@ -47,10 +47,11 @@
 - **FanFusion-Token(FVT) Token Contract:** https://evm-testnet.flowscan.io/address/0x19F82072e6612156eC5F8b43fa404c3e3Eef9957?tab=txs
 - **BettingPool Contract:** https://evm-testnet.flowscan.io/address/0xE4c277c1aFFc8C1Eaa2c5CaFAf9720d527BDB674
 
+![Screenshot 2024-11-17 014952](https://github.com/user-attachments/assets/22125c43-cdf7-47c4-9ddc-796c300763a8)
+
 **Celo Alfajores Testnet Deployed Contracts:**
 - **Contract Owner:** https://celo-alfajores.blockscout.com/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
 - **FanFusion-Token(FVT) Token Contract:** https://celo-alfajores.blockscout.com/address/0xb8171c4E2002Deea048477D8B337ff27F9a36687
 - **BettingPool Contract:** https://celo-alfajores.blockscout.com/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
 
-
-![Screenshot 2024-11-17 014952](https://github.com/user-attachments/assets/22125c43-cdf7-47c4-9ddc-796c300763a8)
+![Screenshot 2024-11-17 034534](https://github.com/user-attachments/assets/da3b2040-a6c1-458c-8b5b-5176172aa440)
