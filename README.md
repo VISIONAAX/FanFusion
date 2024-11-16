@@ -17,6 +17,13 @@
 - **FanFusion-Token(FVT) Token Contract:** https://l1sload-blockscout.scroll.io/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
 - **BettingPool Contract:** https://l1sload-blockscout.scroll.io/address/0x19F82072e6612156eC5F8b43fa404c3e3Eef9957
 
+**Mantle Testnet Deployed Contracts:**
+- **Contract Owner:** https://sepolia.mantlescan.xyz/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
+- **FanFusion-Token(FVT) Token Contract:** https://sepolia.mantlescan.xyz/address/0xb8171c4E2002Deea048477D8B337ff27F9a36687
+- **BettingPool Contract:** https://sepolia.mantlescan.xyz/address/0x97Bb76b7421Be35aE8a201BA581A67B29f80dc5B
+
+- A link to an X post must be submitted with a short description or demo of your project, tagging @0xMantleDevs
+
 **Bitkub Testnet Deployed Contracts:**
 - **Contract Owner:** 
 - **FanFusion-Token(FVT) Token Contract:** 
