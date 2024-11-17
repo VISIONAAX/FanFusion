@@ -158,9 +158,9 @@ This integration ensures FanFusion is scalable, transparent, and user-friendly, 
 ---
 
 ### Morph - 🐨 Best Consumer Applications build on Morph
-**Morph Holesky Testnet Deployed Contracts:**
-- **Contract Owner:** 
-- **FanFusion-Token(FVT) Token Contract:** 
+**Morph Holesky Testnet Deployed Contracts:** 
+- **Contract Owner:** https://explorer-holesky.morphl2.io/address/0xF7249B507F1f89Eaea5d694cEf5cb96F245Bc5b6
+- **FanFusion-Token(FVT) Token Contract:** https://explorer-holesky.morphl2.io/address/0xb8171c4E2002Deea048477D8B337ff27F9a36687
 - **BettingPool Contract:** 
 
 ---
